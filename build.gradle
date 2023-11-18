@@ -14,6 +14,7 @@ loom {
 				"mixins.oculus.bettermipmaps.json",
 				"mixins.oculus.fixes.maxfpscrash.json",
 				"oculus-batched-entity-rendering.mixins.json",
+				"mixins.oculus.compat.dh.json",
 				"mixins.oculus.compat.sodium.json",
 				"mixins.oculus.compat.indigo.json",
 				"mixins.oculus.compat.indium.json"
@@ -46,6 +47,7 @@ dependencies {
 	forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 	
 	modCompileOnly "maven.modrinth:rubidium:0.6.2c"
+	modCompileOnly "maven.modrinth:distanthorizons:2.0.0-a-1.19.2"
 	//modCompileOnly "me.jellysquid.mods:Rubidium:0.6.3"
 }
 
