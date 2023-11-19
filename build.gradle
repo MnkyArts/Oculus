@@ -16,6 +16,7 @@ loom {
 				"mixins.oculus.bettermipmaps.json",
 				"mixins.oculus.fixes.maxfpscrash.json",
 				"oculus-batched-entity-rendering.mixins.json",
+				"mixins.oculus.compat.dh.json",
 				"mixins.oculus.compat.sodium.json",
 				"mixins.oculus.compat.indigo.json",
 				"mixins.oculus.compat.indium.json"
@@ -50,8 +51,9 @@ dependencies {
 	mappings loom.officialMojangMappings()
 	forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 	
-	//modCompileOnly "maven.modrinth:rubidium:0.7.1"
-	modCompileOnly "me.jellysquid.mods:rubidium-upstream:0.7.1+git.1cdb739"
+	modCompileOnly "maven.modrinth:rubidium:0.7.1"
+	modCompileOnly files("libs/DistantHorizons-2.0.0-a-1.20.1.jar")
+	// modCompileOnly "me.jellysquid.mods:rubidium-upstream:0.7.1+git.1cdb739"
 }
 
 processResources {
