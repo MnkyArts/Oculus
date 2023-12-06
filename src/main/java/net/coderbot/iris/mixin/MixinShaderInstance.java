@@ -32,7 +32,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import java.io.Reader;
 import java.util.Objects;
 
-@Mixin(ShaderInstance.class)
+@Mixin(value = ShaderInstance.class, priority = 999)
 public abstract class MixinShaderInstance implements ShaderInstanceInterface {
 	@Shadow
 	public abstract int getId();
@@ -87,7 +87,7 @@ public abstract class MixinShaderInstance implements ShaderInstanceInterface {
 		}
 	}
 
-	@Redirect(method = "<init>(Lnet/minecraft/server/packs/resources/ResourceProvider;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/blaze3d/vertex/VertexFormat;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/GsonHelper;parse(Ljava/io/Reader;)Lcom/google/gson/JsonObject;"))
+	@Redirect(method = "<init>(Lnet/minecraft/server/packs/resources/ResourceProvider;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/blaze3d/vertex/VertexFormat;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/GsonHelper;parse(Ljava/io/Reader;)Lcom/google/gson/JsonObject;"), require = 0)
 	public JsonObject iris$setupGeometryShader(Reader reader, ResourceProvider resourceProvider, ResourceLocation name, VertexFormat vertexFormat) {
 		this.iris$createGeometryShader(resourceProvider, name);
 		return GsonHelper.parse(reader);
