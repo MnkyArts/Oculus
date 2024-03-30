@@ -38,3 +38,9 @@ jobs:
       with:
         name: iris-artifacts
         path: build/libs
+
+    - name: "Artifacts"
+      uses: actions/upload-artifact@v1
+      with:
+        name: iris-artifacts
+        path: "${{ github.workspace }}/build/package"
