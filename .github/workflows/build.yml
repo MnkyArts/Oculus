@@ -5,6 +5,9 @@ name: Java CI with Brachyura
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+    - '*'
 
 jobs:
   build:
